@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết Bài viết - Milk Block Wiki</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .game-icon {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+    .game-icon img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .game-icon img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Milk Block Wiki</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="post.html">Đăng bài</a>
+      <a href="blog.html">Xem bài viết</a>
+      <div id="userInfo" style="margin-top:10px;"></div>
+    </nav>
+  </header>
+
+  <!-- Icon game góc phải -->
+  <div class="game-icon">
+    <img src="unnamed.jpg" alt="Game Icon">
+  </div>
+
+  <main>
+    <div id="postDetail"></div>
+
+    <h3>Bình luận</h3>
+    <form id="commentForm">
+      <input type="text" id="comment" placeholder="Nhập bình luận..." required><br>
+      <button type="submit">Gửi</button>
+    </form>
+
+    <div id="commentList"></div>
+  </main>
+
+  <footer>
+    © 2025 Milk Block Wiki
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

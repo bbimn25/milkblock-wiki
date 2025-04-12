@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milk Block Wiki - Trang Chủ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .game-icon {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+    .game-icon img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .game-icon img:hover {
+      transform: scale(1.1);
+    }
+
+    .auth {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+    }
+    .auth button {
+      margin: 2px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Milk Block Wiki</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="post.html">Đăng bài</a>
+      <a href="blog.html">Xem bài viết</a>
+      <div id="userInfo" style="margin-top:10px;"></div>
+
+    </nav>
+  </header>
+
+  <!-- Icon Game góc phải -->
+  <div class="game-icon">
+    <img src="unnamed.jpg" alt="Game Icon">
+  </div>
+
+  <!-- Đăng ký / Đăng nhập / Đăng xuất -->
+  <div class="auth" id="authButtons">
+    <!-- Sẽ tự động hiện Đăng nhập / Đăng ký hoặc Đăng xuất -->
+  </div>
+
+  <main>
+    <h2>Chào mừng đến với Milk Block Wiki!</h2>
+    <p>Nơi chia sẻ kiến thức & khám phá thế giới Milk Block RPG World.</p>
+  </main>
+
+  <footer>
+    © 2025 Milk Block Wiki
+  </footer>
+
+<script>
+  // Check login
+  const authButtons = document.getElementById('authButtons');
+  const user = localStorage.getItem('username');
+
+  if (user) {
+    authButtons.innerHTML = `
+      <span>Xin chào, ${user}</span>
+      <button onclick="logout()">Đăng xuất</button>
+    `;
+  } else {
+    authButtons.innerHTML = `
+      <button onclick="location.href='auth.html'">Đăng ký / Đăng nhập</button>
+    `;
+  }
+
+  function logout() {
+    localStorage.removeItem('username');
+    location.reload();
+  }
+</script>
+</body>
+</html>
